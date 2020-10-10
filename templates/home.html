@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- Nav As a heading -->
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Doctor Consultancy Fees Prediction</span>
+    </nav>
+    <br> <br>
+    <h6 class="mx-3">Please fill the following details in order to Predict Doctor Consultant Fees</h6>
+    <div class="container">
+        <form action="\predict" method="post" class="my-3">
+            <div class="form-row">
+                <div class="col">
+                    <div class="card mx-3" style="width: 21rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Profile</h5>
+                            <select name="Profile" id="Profile" required="required">
+                                <option value="Ayurveda">Ayurveda</option>
+                                <option value="Dentist">Dentist</option>
+                                <option value="General Medicine">General Medicine</option>
+                                <option value="Dermatologists">Dermatologists</option>
+                                <option value="ENT Specialist">ENT Specialist</option>
+                                <option value="Homeopath">Homeopath</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mx-3" style="width: 21rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Qualification</h5>
+                            <select name="Qualification" id="Qualification" required="required">
+                                <option value="MBBS">MBBS</option>
+                                <option value="BDS">BDS</option>
+                                <option value="BAMS">BAMS</option>
+                                <option value="BHMS">BHMS</option>
+                                <option value="MD Dermatology">MD Dermatology</option>
+                                <option value="MS ENT">MS ENT</option>
+                                <option value="Venereology and Leprosy">Venereology and Leprosy</option>
+                                <option value="MD General Medicine">MD General Medicine</option>
+                                <option value="Diploma in Otorhinolaryngology">Diploma in Otorhinolaryngology</option>
+                                <option value="MD Homeopathy">MD Homeopathy</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="col">
+                    <div class="card my-3 mx-3" id="card" style="width: 21rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Experience</h5>
+                            <input type="text" name="Experience" class="form-control" placeholder="Experience"
+                                required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3 mx-3" style="width: 21rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Rating</h5>
+                            <input type="text" name="Rating" class="form-control" placeholder="Rating"
+                                required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <div class="card my-3 mx-3" style="width: 21rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">City</h5>
+                            <select name="city" id="city">
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Ernakulam">Ernakulam</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Coimbatore">Coimbatore</option>
+                                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                                <option value="Unknown">None</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="col my-3">
+                <input type="submit" id="button" value="Submit" class="btn btn-primary">
+            </div>
+        </form>
+        <br>
+
+        <div class="container">
+            <h3>{{ prediction_text }}</h3>
+        </div>
+
+        <br>
+        <br>
+        <p class="copyright text-muted" style="text-align: center;">copyright@: Raghav Agrawal</p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
